@@ -2,7 +2,6 @@ import React, { FC, FormEvent, useState } from 'react';
 import AccountDetailsStep from './Components/AccountDetailsStep';
 import OtherStep from './Components/OtherStep';
 import PersonalInfoStep from './Components/PersonalInfoStep';
-import Success from './Components/Success';
 
 interface InputValueProps {
   email: string;
@@ -82,7 +81,7 @@ const Form: FC = () => {
             {step !== 0 && <button onClick={() => setStep(step - 1)}>Back</button>}
             <button
               type="submit"
-              onClick={() => (step == titles.length - 1 ? <Success /> : next())}
+              onClick={() => (step == titles.length - 1 ? alert('form submitted') : next())}
             >
               {step == titles.length - 1 ? 'Submit' : 'Next'}
             </button>

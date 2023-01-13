@@ -7,21 +7,6 @@ const AccountDetailsStep: FC<StepProps> = ({ data, updateFields, handleSubmit }:
   const togglePassword = () => {
     setShowPassword(!showPassword);
   };
-  const [email, setEmail] = useState('');
-  const [emailDirty, setEmailDirty] = useState(false);
-  const [emailError, setEmailError] = useState('email cannot be empty');
-
-  const validateEmail = (e: any) => {
-    setEmail(e.target.value);
-    const re =
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-    if (!re.test(String(e.target.value).toLowerCase())) {
-      setEmailError('uncorrect email');
-    } else {
-      setEmailError('');
-    }
-  };
 
   return (
     <div className="step-content">
